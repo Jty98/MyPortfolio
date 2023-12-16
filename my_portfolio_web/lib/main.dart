@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {});
   }
 
-  static const seedColor = Color.fromARGB(255, 117, 163, 38);
+  static const seedColor = Color.fromARGB(255, 19, 44, 57);
 
   @override
   Widget build(BuildContext context) {
