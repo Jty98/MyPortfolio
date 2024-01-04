@@ -12,7 +12,6 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
-
     return Scaffold(
       appBar: MyAppbar(onChangeTheme: onChangeTheme),
       body: SingleChildScrollView(
@@ -75,7 +74,7 @@ class Home extends StatelessWidget {
                             height: 10,
                           ),
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                            padding: const EdgeInsets.all(8),
                             child: Container(
                               // width:
                               // ResponsiveBreakpoints.of(context).isDesktop
@@ -176,14 +175,9 @@ class Home extends StatelessWidget {
                           weight: FontWeight.w500,
                           fontSize: 22,
                         ),
-                        // Icon(
-                        //   SimpleIcons.python,
-                        //   color: SimpleIconColors.python,
-                        //   size: 30,
-                        // ),
                         Icon(
-                          SimpleIcons.imdb,
-                          color: SimpleIconColors.imdb,
+                          SimpleIcons.n1001tracklists,
+                          color: SimpleIconColors.n1001tracklists,
                           size: 50.0,
                         ),
                         const Text(
