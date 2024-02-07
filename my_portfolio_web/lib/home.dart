@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_portfolio_web/Components/icon_widget.dart';
+import 'package:my_portfolio_web/Components/text_widget.dart';
 import 'package:my_portfolio_web/VM/home_ctrl.dart';
 import 'package:my_portfolio_web/View/myappbar.dart';
+import 'package:my_portfolio_web/View/my_skills.dart';
+import 'package:my_portfolio_web/utils/icon_image_data.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:simple_icons/simple_icons.dart';
 
@@ -11,20 +15,18 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeController homeController = Get.put(HomeController());
+    final HomeController homeController = Get.put(HomeController());
     return Scaffold(
       appBar: MyAppbar(onChangeTheme: onChangeTheme),
       body: SingleChildScrollView(
         child: Center(
           child: ResponsiveRowColumn(
             rowCrossAxisAlignment: CrossAxisAlignment.start,
-            // rowPadding: const EdgeInsets.all(30),
             rowMainAxisAlignment: MainAxisAlignment.spaceEvenly,
             columnPadding: const EdgeInsets.all(30),
             layout: ResponsiveBreakpoints.of(context).isDesktop
                 ? ResponsiveRowColumnType.ROW
                 : ResponsiveRowColumnType.COLUMN,
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ResponsiveRowColumnItem(
                 child: Padding(
@@ -43,7 +45,7 @@ class Home extends StatelessWidget {
                     //     // MediaQuery.of(context).size.height * 0.42,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30.0),
-                      color: Theme.of(context).colorScheme.tertiary,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(20),
@@ -51,7 +53,7 @@ class Home extends StatelessWidget {
                         // 왼쪽 프로필 컬럼
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          textWidget(
+                          showTextWidget(
                             context: context,
                             text: "Profile",
                             weight: FontWeight.bold,
@@ -67,7 +69,7 @@ class Home extends StatelessWidget {
                                 "images/testProfileImage.jpeg",
                               ),
                               foregroundColor:
-                                  Theme.of(context).colorScheme.onTertiary,
+                                  Theme.of(context).colorScheme.onSecondary,
                             ),
                           ),
                           const SizedBox(
@@ -76,51 +78,40 @@ class Home extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8),
                             child: Container(
-                              // width:
-                              // ResponsiveBreakpoints.of(context).isDesktop
-                              //     ? MediaQuery.of(context).size.width * 0.8
-                              //     : MediaQuery.of(context).size.width * 0.5,
-                              // 300,
-                              // : 1200.w,
-                              // height:
-                              //     ResponsiveBreakpoints.of(context).isDesktop
-                              //         ? MediaQuery.of(context).size.height * 0.35
-                              //         : MediaQuery.of(context).size.height * 0.2,
-                              // 200,
-                              // : 1000.h,
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                color: Theme.of(context).colorScheme.onTertiary,
+                                color:
+                                    Theme.of(context).colorScheme.onSecondary,
                                 width: 1,
                               )),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  profileText(
+                                  shoeProfileText(
                                     icon: Icons.assignment_ind,
                                     content: "정태영",
                                     context: context,
                                     weight: FontWeight.w600,
                                   ),
-                                  profileText(
+                                  shoeProfileText(
                                     icon: Icons.cake_rounded,
                                     content: "1998.12.24",
                                     context: context,
                                     weight: FontWeight.w600,
                                   ),
-                                  profileText(
+                                  shoeProfileText(
                                     icon: Icons.house_rounded,
                                     content: "경기도 수원시 권선구",
                                     context: context,
                                     weight: FontWeight.w600,
                                   ),
-                                  profileText(
+                                  shoeProfileText(
                                     icon: Icons.school_rounded,
                                     content: "평택대학교 융합소프트웨어학과",
                                     context: context,
                                     weight: FontWeight.w600,
                                   ),
-                                  profileText(
+                                  shoeProfileText(
                                     icon: Icons.email_rounded,
                                     content: "clclcfnfn@naver.com",
                                     context: context,
@@ -149,56 +140,23 @@ class Home extends StatelessWidget {
                     // height: MediaQuery.of(context).size.height * 0.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30.0),
-                      color: Theme.of(context).colorScheme.tertiary,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                     child: Column(
                       children: [
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        textWidget(
+                        mySkills(context: context),
+                        showTextWidget(
                           context: context,
-                          text: "기술스택",
+                          text: "Project",
                           weight: FontWeight.bold,
                           fontSize: 30,
                         ),
                         Padding(
                           padding: const EdgeInsets.all(15),
                           child: Divider(
-                            color: Theme.of(context).colorScheme.onTertiary,
+                            color: Theme.of(context).colorScheme.onSecondary,
                             height: 2.0,
                           ),
-                        ),
-                        textWidget(
-                          context: context,
-                          text: "Languague",
-                          weight: FontWeight.w500,
-                          fontSize: 22,
-                        ),
-                        Icon(
-                          SimpleIcons.n1001tracklists,
-                          color: SimpleIconColors.n1001tracklists,
-                          size: 50.0,
-                        ),
-                        const Text(
-                          "data",
-                          style: TextStyle(fontSize: 100),
-                        ),
-                        const Text(
-                          "data",
-                          style: TextStyle(fontSize: 100),
-                        ),
-                        const Text(
-                          "data",
-                          style: TextStyle(fontSize: 100),
-                        ),
-                        const Text(
-                          "data",
-                          style: TextStyle(fontSize: 100),
-                        ),
-                        const Text(
-                          "data",
-                          style: TextStyle(fontSize: 100),
                         ),
                       ],
                     ),
@@ -213,72 +171,6 @@ class Home extends StatelessWidget {
   }
   // --- Functions ---
 
-  /// 자기 소개 중에서 텍스트를 담당하는 함수
-  Widget profileText({
-    required IconData icon,
-    required String content,
-    required BuildContext context,
-    required FontWeight weight,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: SizedBox(
-        width: 300,
-        height: 20,
-        child: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Icon(
-                icon,
-                size: 16,
-                color: Theme.of(context).colorScheme.onTertiary,
-              ),
-            ),
-            Text(
-              content,
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onTertiary,
-                fontWeight: weight,
-                fontSize: resizeText(context),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
-  /// 중복되는 텍스트 위젯
-  Widget textWidget({
-    required BuildContext context,
-    required String text,
-    required FontWeight weight,
-    required double fontSize,
-  }) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: Theme.of(context).colorScheme.onTertiary,
-        fontWeight: weight,
-        fontSize: fontSize,
-      ),
-    );
-  }
 
-  /// 글자 크기 정해주는 함수
-  double resizeText(
-    BuildContext context,
-  ) {
-    double textSize = 0.0;
-    if (ResponsiveBreakpoints.of(context).isDesktop) {
-      textSize = 14.0;
-    } else if (ResponsiveBreakpoints.of(context).isTablet) {
-      textSize = 12.0;
-    } else {
-      textSize = 12.0;
-    }
-
-    return textSize;
-  }
 } // End

@@ -63,8 +63,8 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ],
-      backgroundColor: Theme.of(context).colorScheme.tertiary,
-      foregroundColor: Theme.of(context).colorScheme.onTertiary,
+      backgroundColor: Theme.of(context).colorScheme.secondary,
+      foregroundColor: Theme.of(context).colorScheme.onSecondary,
     );
   }
 
