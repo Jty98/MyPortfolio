@@ -53,12 +53,7 @@ class Home extends StatelessWidget {
                         // 왼쪽 프로필 컬럼
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          showTextWidget(
-                            context: context,
-                            text: "Profile",
-                            weight: FontWeight.bold,
-                            fontSize: 30,
-                          ),
+                          sohwTitelsWidget(context: context, borderSize: 140, icon: Icons.badge, text: 'Profile'),
                           const SizedBox(
                             height: 10,
                           ),
@@ -144,6 +139,11 @@ class Home extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                          child: sohwTitelsWidget(context: context, borderSize: 130, icon: Icons.auto_stories, text: 'Skills'),
+                        ),
+                        showDivider(context: context),
                         mySkills(context: context),
                         showTextWidget(
                           context: context,
@@ -151,13 +151,7 @@ class Home extends StatelessWidget {
                           weight: FontWeight.bold,
                           fontSize: 30,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(15),
-                          child: Divider(
-                            color: Theme.of(context).colorScheme.onSecondary,
-                            height: 2.0,
-                          ),
-                        ),
+                        showDivider(context: context),
                       ],
                     ),
                   ),
@@ -170,7 +164,4 @@ class Home extends StatelessWidget {
     );
   }
   // --- Functions ---
-
-
-
 } // End

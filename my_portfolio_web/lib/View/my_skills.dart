@@ -9,21 +9,8 @@ Widget mySkills({required BuildContext context}) {
     children: [
       showTextWidget(
         context: context,
-        text: "Skills",
-        weight: FontWeight.bold,
-        fontSize: 30,
-      ),
-      Padding(
-        padding: const EdgeInsets.all(15),
-        child: Divider(
-          color: Theme.of(context).colorScheme.onSecondary,
-          height: 2.0,
-        ),
-      ),
-      showTextWidget(
-        context: context,
         text: "Languague",
-        weight: FontWeight.w500,
+        weight: FontWeight.bold,
         fontSize: 22,
       ),
       Row(
@@ -31,13 +18,23 @@ Widget mySkills({required BuildContext context}) {
         children: [
           showIconWidget(
             context: context,
+            iconName: 'Dart',
+            icon: IconImageData.dartIcon,
+          ),
+          showIconWidget(
+            context: context,
             iconName: 'Python',
             icon: IconImageData.pythonIcon,
           ),
           showIconWidget(
             context: context,
-            iconName: 'Dart',
-            icon: IconImageData.dartIcon,
+            iconName: 'R',
+            icon: IconImageData.rIcon,
+          ),
+          showIconWidget(
+            context: context,
+            iconName: 'Java',
+            icon: IconImageData.javaIcon,
           ),
           showIconWidget(
             context: context,
@@ -54,7 +51,7 @@ Widget mySkills({required BuildContext context}) {
       showTextWidget(
         context: context,
         text: "Framework & Server",
-        weight: FontWeight.w500,
+        weight: FontWeight.bold,
         fontSize: 22,
       ),
       Row(
@@ -100,7 +97,7 @@ Widget mySkills({required BuildContext context}) {
       showTextWidget(
         context: context,
         text: "Database",
-        weight: FontWeight.w500,
+        weight: FontWeight.bold,
         fontSize: 22,
       ),
       Row(
@@ -126,7 +123,7 @@ Widget mySkills({required BuildContext context}) {
       showTextWidget(
         context: context,
         text: "IDE",
-        weight: FontWeight.w500,
+        weight: FontWeight.bold,
         fontSize: 22,
       ),
       Row(
@@ -147,12 +144,17 @@ Widget mySkills({required BuildContext context}) {
             iconName: 'eclipse',
             icon: IconImageData.ecilpseIcon,
           ),
+          showIconWidget(
+            context: context,
+            iconName: 'Google Colab',
+            icon: IconImageData.googleColabIcon,
+          ),
         ],
       ),
       showTextWidget(
         context: context,
         text: "Tools",
-        weight: FontWeight.w500,
+        weight: FontWeight.bold,
         fontSize: 22,
       ),
       Row(
@@ -177,6 +179,11 @@ Widget mySkills({required BuildContext context}) {
             context: context,
             iconName: 'Figma',
             icon: IconImageData.figmaIcon,
+          ),
+          showIconWidget(
+            context: context,
+            iconName: 'Fork',
+            icon: IconImageData.forkIcon,
           ),
           showIconWidget(
             context: context,

@@ -9,6 +9,7 @@ class IconImageData {
   // Language
   static const pythonIcon = Icon(SimpleIcons.python, color: SimpleIconColors.python);
   static const rIcon = Icon(SimpleIcons.r, color: SimpleIconColors.r);
+  static const javaIcon = Icon(SimpleIcons.coffeescript, color: SimpleIconColors.coffeescript);
   static const javaScriptIcon = Icon(SimpleIcons.javascript, color: SimpleIconColors.javascript);
   static const dartIcon = Icon(SimpleIcons.dart, color: SimpleIconColors.dart);
   static const swiftIcon = Icon(SimpleIcons.swift, color: SimpleIconColors.swift);
@@ -26,12 +27,14 @@ class IconImageData {
   static const ecilpseIcon = Icon(SimpleIcons.eclipseide, color: SimpleIconColors.eclipseide);
   static const vsCodeIcon = Icon(SimpleIcons.visualstudiocode, color: SimpleIconColors.visualstudiocode);
   static const xCodeIcon = Icon(SimpleIcons.xcode, color: SimpleIconColors.xcode);
+  static const googleColabIcon = Icon(SimpleIcons.googlecolab, color: SimpleIconColors.googlecolab);
 
   // Tools
   static const slackIcon = Icon(SimpleIcons.slack, color: SimpleIconColors.slack);
   static const miroIcon = Icon(SimpleIcons.miro, color: SimpleIconColors.miro);
   static const notionIcon = Icon(SimpleIcons.notion, color: SimpleIconColors.notion);
   static const figmaIcon = Icon(SimpleIcons.figma, color: SimpleIconColors.figma);
+  static const forkIcon = Icon(SimpleIcons.sourcetree, color: SimpleIconColors.sourcetree);
   static const gitIcon = Icon(SimpleIcons.git, color: SimpleIconColors.git);
   static const githubIcon = Icon(SimpleIcons.github, color: SimpleIconColors.github);
 
