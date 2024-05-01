@@ -22,7 +22,8 @@ class _MyAppState extends State<MyApp> {
     setState(() {});
   }
 
-  static const seedColor = Color.fromARGB(255, 249, 255, 255);
+  // static const seedColor = Color.fromARGB(255, 249, 255, 255);
+  static const seedColor = Colors.lightGreen;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class _MyAppState extends State<MyApp> {
           const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
         ],
       ),
-      title: 'Flutter Demo',
+      title: 'MyPortfolioWeb',
       themeMode: _themeMode,
       theme: ThemeData(
         colorSchemeSeed: seedColor,
