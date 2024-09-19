@@ -41,7 +41,7 @@ class IconWidget extends StatelessWidget {
                 skillsText.iconName,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.onSecondary,
+                  color: Theme.of(context).colorScheme.tertiary,
                   fontWeight: FontWeight.bold,
                   fontSize: responseSize.resizeValue(
                     context: context,

@@ -20,11 +20,7 @@ class ProjectWidget extends StatelessWidget {
     ResponseSize responseSize = ResponseSize();
 
     return SizedBox(
-      width: responseSize.resizeValue(
-          context: context,
-          defaultValue: 460,
-          mobileValue: 400,
-          tabletValue: 350),
+      width: 500,
       child: Card(
         child: Column(
           children: [
@@ -42,11 +38,12 @@ class ProjectWidget extends StatelessWidget {
                     width: 5,
                   ),
                   textWidget.showTextWidget(
-                      context: context,
-                      text: titleText,
-                      weight: FontWeight.bold,
-                      fontColor: Theme.of(context).colorScheme.tertiary,
-                      fontSize: 20),
+                    context: context,
+                    text: titleText,
+                    weight: FontWeight.bold,
+                    fontColor: Theme.of(context).colorScheme.tertiary,
+                    fontSize: 20,
+                  ),
                 ],
               ),
             ),
@@ -56,7 +53,7 @@ class ProjectWidget extends StatelessWidget {
               child: Image.asset(
                 mockupImage,
                 fit: BoxFit.fill,
-                width: 320,
+                width: 430,
                 height: 200,
               ),
             ),

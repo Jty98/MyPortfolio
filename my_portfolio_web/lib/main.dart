@@ -22,7 +22,6 @@ class _MyAppState extends State<MyApp> {
     setState(() {});
   }
 
-  // static const seedColor = Color.fromARGB(255, 249, 255, 255);
   static const seedColor = Colors.lightGreen;
 
   @override

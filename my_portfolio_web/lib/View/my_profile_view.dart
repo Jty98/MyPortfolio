@@ -8,54 +8,51 @@ class MyProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 5, 8, 5),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 3),
-            child: Icon(
-              profileText.icon,
-              size: ResponsiveValue(
-                context,
-                defaultValue: 16.0, // double 값으로만 줘야됨
-                conditionalValues: [
-                  Condition.largerThan(
-                    value: 10.0,
-                    name: MOBILE,
-                  ),
-                  Condition.largerThan(
-                    value: 18.0,
-                    name: TABLET,
-                  ),
-                ],
-              ).value,
-              color: Theme.of(context).colorScheme.onTertiary,
-            ),
+    return Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 3),
+          child: Icon(
+            profileText.icon,
+            size: ResponsiveValue(
+              context,
+              defaultValue: 16.0, // double 값으로만 줘야됨
+              conditionalValues: [
+                Condition.largerThan(
+                  value: 16.0,
+                  name: MOBILE,
+                ),
+                Condition.largerThan(
+                  value: 16.0,
+                  name: TABLET,
+                ),
+              ],
+            ).value,
+            color: Theme.of(context).colorScheme.tertiary,
           ),
-          Text(
-            profileText.content,
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.onTertiary,
-              fontWeight: FontWeight.w500,
-              fontSize: ResponsiveValue(
-                context,
-                defaultValue: 16.0, // double 값으로만 줘야됨
-                conditionalValues: [
-                  Condition.largerThan(
-                    value: 10.0,
-                    name: MOBILE,
-                  ),
-                  Condition.largerThan(
-                    value: 18.0,
-                    name: TABLET,
-                  ),
-                ],
-              ).value,
-            ),
+        ),
+        Text(
+          profileText.content,
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.tertiary,
+            fontWeight: FontWeight.w500,
+            fontSize: ResponsiveValue(
+              context,
+              defaultValue: 16.0, // double 값으로만 줘야됨
+              conditionalValues: [
+                Condition.largerThan(
+                  value: 16.0,
+                  name: MOBILE,
+                ),
+                Condition.largerThan(
+                  value: 16.0,
+                  name: TABLET,
+                ),
+              ],
+            ).value,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

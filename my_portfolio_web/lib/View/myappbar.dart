@@ -41,22 +41,25 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
           child: Row(
             children: [
               Obx(
-                () => ToggleButtons(
-                  onPressed: (index) {
-                    homeController.onPressedFunc(index);
-                    index == 0
-                        ? onChangeTheme(ThemeMode.light)
-                        : onChangeTheme(ThemeMode.dark);
-                  },
-                  isSelected: homeController.selectedMode,
-                  selectedColor: Colors.white,
-                  fillColor: Colors.blueGrey,
-                  borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  constraints: const BoxConstraints(
-                    minHeight: 60.0,
-                    minWidth: 60.0,
+                () => Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: ToggleButtons(
+                    onPressed: (index) {
+                      homeController.onPressedFunc(index);
+                      index == 0
+                          ? onChangeTheme(ThemeMode.light)
+                          : onChangeTheme(ThemeMode.dark);
+                    },
+                    isSelected: homeController.selectedMode,
+                    selectedColor: Colors.white,
+                    fillColor: Colors.blueGrey,
+                    borderRadius: const BorderRadius.all(Radius.circular(8)),
+                    constraints: const BoxConstraints(
+                      minHeight: 50.0,
+                      minWidth: 50.0,
+                    ),
+                    children: mode,
                   ),
-                  children: mode,
                 ),
               ),
             ],

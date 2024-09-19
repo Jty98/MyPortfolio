@@ -14,77 +14,80 @@ Widget mySkillsView({required BuildContext context}) {
   List<SkillsText> ideText = SkillsText.ideText;
   List<SkillsText> toolText = SkillsText.toolText;
 
-  return SizedBox(
-    child: Column(
-      children: [
-        textWidget.showTextWidget(
-          context: context,
-          text: "Languague",
-          weight: FontWeight.bold,
-          fontColor: Theme.of(context).colorScheme.onTertiary,
-          fontSize: 22,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: languagueText
-              .map((lText) => IconWidget(skillsText: lText))
-              .toList(),
-        ),
-        textWidget.showTextWidget(
-          context: context,
-          text: "Framework & Server",
-          weight: FontWeight.bold,
-          fontColor: Theme.of(context).colorScheme.onTertiary,
-          fontSize: responseSize.resizeValue(
-              context: context,
-              defaultValue: 22,
-              mobileValue: 12,
-              tabletValue: 22),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: frameworkText
-              .map((fText) => IconWidget(skillsText: fText))
-              .toList(),
-        ),
-        textWidget.showTextWidget(
-          context: context,
-          text: "Database",
-          weight: FontWeight.bold,
-          fontColor: Theme.of(context).colorScheme.onTertiary,
-          fontSize: 22,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: databaseText
-              .map((dText) => IconWidget(skillsText: dText))
-              .toList(),
-        ),
-        textWidget.showTextWidget(
-          context: context,
-          text: "IDE",
-          weight: FontWeight.bold,
-          fontColor: Theme.of(context).colorScheme.onTertiary,
-          fontSize: 22,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:
-              ideText.map((iText) => IconWidget(skillsText: iText)).toList(),
-        ),
-        textWidget.showTextWidget(
-          context: context,
-          text: "Tools",
-          weight: FontWeight.bold,
-          fontColor: Theme.of(context).colorScheme.onTertiary,
-          fontSize: 22,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:
-              toolText.map((tText) => IconWidget(skillsText: tText)).toList(),
-        ),
-      ],
+  return Container(
+    decoration: BoxDecoration(
+      color: Theme.of(context).colorScheme.secondaryContainer,
+      borderRadius: BorderRadius.circular(20),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Column(
+        children: [
+          textWidget.showTextWidget(
+            context: context,
+            text: "Languague",
+            weight: FontWeight.bold,
+            fontColor: Theme.of(context).colorScheme.onBackground,
+            fontSize: 22,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: languagueText
+                .map((lText) => IconWidget(skillsText: lText))
+                .toList(),
+          ),
+          textWidget.showTextWidget(
+            context: context,
+            text: "Framework & Server",
+            weight: FontWeight.bold,
+            fontColor: Theme.of(context).colorScheme.onBackground,
+            fontSize: 22,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: frameworkText
+                .map((fText) => IconWidget(skillsText: fText))
+                .toList(),
+          ),
+          textWidget.showTextWidget(
+            context: context,
+            text: "Database",
+            weight: FontWeight.bold,
+            fontColor: Theme.of(context).colorScheme.onBackground,
+            fontSize: 22,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: databaseText
+                .map((dText) => IconWidget(skillsText: dText))
+                .toList(),
+          ),
+          textWidget.showTextWidget(
+            context: context,
+            text: "IDE",
+            weight: FontWeight.bold,
+            fontColor: Theme.of(context).colorScheme.onBackground,
+            fontSize: 22,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:
+                ideText.map((iText) => IconWidget(skillsText: iText)).toList(),
+          ),
+          textWidget.showTextWidget(
+            context: context,
+            text: "Tools",
+            weight: FontWeight.bold,
+            fontColor: Theme.of(context).colorScheme.onBackground,
+            fontSize: 22,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:
+                toolText.map((tText) => IconWidget(skillsText: tText)).toList(),
+          ),
+        ],
+      ),
     ),
   );
 }

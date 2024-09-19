@@ -17,6 +17,7 @@ class MyProjectView extends StatelessWidget {
             : ResponsiveRowColumnType.COLUMN,
         children: const [
           ResponsiveRowColumnItem(
+            rowFlex: 1, // row일때 크기 비율
             child: Padding(
               padding: EdgeInsets.all(3),
               child: Column(
@@ -42,6 +43,7 @@ class MyProjectView extends StatelessWidget {
             ),
           ),
           ResponsiveRowColumnItem(
+            rowFlex: 1, // row일때 크기 비율
             child: Padding(
               padding: EdgeInsets.all(3),
               child: Column(

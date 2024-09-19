@@ -81,7 +81,8 @@ class TextWidget {
   }
 
   /// Divider 위젯
-  Widget showDivider({required BuildContext context, required double paddingSize}) {
+  Widget showDivider(
+      {required BuildContext context, required double paddingSize}) {
     return Padding(
       padding: EdgeInsets.all(paddingSize),
       child: Divider(
@@ -96,63 +97,42 @@ class TextWidget {
       {required BuildContext context,
       required IconData icon,
       required String text}) {
-    return Container(
-      width: responseSize.resizeValue(
-          context: context,
-          defaultValue: 180.0,
-          mobileValue: 100.0,
-          tabletValue: 200.0),
-      decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.onTertiary,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            width: 3,
-            color: const Color.fromARGB(255, 6, 46, 7),
-          )),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Icon(
-            icon,
-            color: Theme.of(context).colorScheme.tertiary,
-            size: ResponsiveValue(
-              context,
-              defaultValue: 30.0, // double 값으로만 줘야됨
-              conditionalValues: [
-                Condition.largerThan(
-                  value: 20.0,
-                  name: MOBILE,
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Container(
+        width: 200,
+        decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.onTertiary,
+            borderRadius: const BorderRadius.all(Radius.circular(20)
+                // const BorderRadius.only(
+                //   topLeft: Radius.circular(20.0),
+                //   topRight: Radius.circular(20.0),
                 ),
-                Condition.largerThan(
-                  value: 40.0,
-                  name: TABLET,
-                ),
-              ],
-            ).value,
-          ),
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: ResponsiveValue(
-                context,
-                defaultValue: 30.0, // double 값으로만 줘야됨
-                conditionalValues: [
-                  Condition.largerThan(
-                    value: 20.0,
-                    name: MOBILE,
-                  ),
-                  Condition.largerThan(
-                    value: 40.0,
-                    name: TABLET,
-                  ),
-                ],
-              ).value,
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).colorScheme.tertiary,
+            border: Border.all(
+              width: 3,
+              color: const Color.fromARGB(255, 6, 46, 7),
+            )
+            // border: const Border(
+            //   left: BorderSide(color: Color.fromARGB(255, 6, 46, 7), width: 3),
+            //   right: BorderSide(color: Color.fromARGB(255, 6, 46, 7), width: 3),
+            //   top: BorderSide(color: Color.fromARGB(255, 6, 46, 7), width: 3),
+            // ),
             ),
-          ),
-        ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Icon(icon, color: Theme.of(context).colorScheme.tertiary, size: 30),
+            Text(
+              text,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.tertiary,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
